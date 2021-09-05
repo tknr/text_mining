@@ -1,0 +1,16 @@
+#!/usr/bin/python
+# coding: utf-8
+from wordcloud import WordCloud
+
+
+text_file = open("src.txt")
+bindata = text_file.read()
+txt = bindata
+
+
+wordcloud = WordCloud(background_color="white",
+    font_path="HackGenNerd_v2.5.1/HackGenNerd-Regular.ttf",
+    width=800,height=600).generate(txt)
+
+
+wordcloud.to_file("./result_wordcloud.png")
